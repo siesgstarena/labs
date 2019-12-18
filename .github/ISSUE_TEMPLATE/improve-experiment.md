@@ -1,6 +1,6 @@
 ---
 name: Improve Experiment
-about: Suggest an improvement in a experiment
+about: Suggest improvement in the experiment
 title: ''
 labels: imporve experiment
 assignees: ''
@@ -17,4 +17,4 @@ A clear and concise description of what you are improving, how you are improving
 A clear and concise description of any alternative solutions or idea you've considered.
 
 **Additional context**
-Add any other context or screenshots about the improved experiment here.
+Add any other context or screenshots about the improvement here.

@@ -4,7 +4,8 @@
 
 ## Type Of Change
 - [ ] Bug Fix (non-breaking change that fixes an issue)
-- [ ] New Experiments
+- [ ] New Experiment
+- [ ] Improving Experiment
 - [ ] Breaking Change (fix or feature that would cause existing functionality to not work as expected)
 
 ## Related Issues
