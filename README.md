@@ -3,7 +3,7 @@
   Labs
   <br>
 </h1>
-<p align="center">Community Driven Data Science &amp; Machine Learning Experiments at SIESGSTarena</p>
+<p align="center">Community Driven Data Science and Machine Learning Experiments at SIESGSTarena</p>
 <br>
 
 ![GitHub](https://img.shields.io/github/license/siesgstarena/labs)
@@ -23,10 +23,11 @@
 ## About
 Labs is a one stop for all Data Science and Machine Learning enthusiasts to learn and contribute to one of the several research activities carried out by SIESGSTarena team. Its a community driven project where every novice and experienced can make use of our datasets and try to come up with several visualizations, pre-trained models and any other research work which can be deployed on SIESGSTarena or published in general.
 
-## Set of Experiments (just few examples, you can do more than what's said here)
+## Set of Experiments (Just few examples, you can do more than what's given here)
 
-* Recommendation of Blogs to users
-* Recommendation of problems to users based on past submissions
+* Wordclouds of the most common phrases in the blogs
+* Recommendation of problems to users based on their past submissions
+* Recommendation of blog posts to users
 * A statistical representation of progress of users in respective topics ('tags' feature in the dataset) of competitive programming in SIESGSTarena
 
 **Refer [code-drills](https://www.code-drills.com/) for further clarity.**
@@ -50,4 +51,4 @@ Sending a PR without discussion might end up resulting in a rejected PR, because
 
 ## License
 
-All the notebooks in this repository are published under the terms of the MIT License, as found in the [LICENSE](LICENSE) file.
+All the content in this repository are published under the terms of the MIT License, as found in the [LICENSE](LICENSE) file.
