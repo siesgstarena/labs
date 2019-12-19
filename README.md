@@ -1,8 +1,17 @@
-# Labs
-Community Driven Data Science &amp; Machine Learning Experiments at SIESGSTarena
+<h1 align="center">
+  <img src="https://res.cloudinary.com/siesgstarena/image/upload/v1576090231/arena/bug4ever2019/assets/labs.png" align="center" height="80">
+  Labs
+  <br>
+</h1>
+<p align="center">Community Driven Data Science &amp; Machine Learning Experiments at SIESGSTarena</p>
+<br>
 
 ![GitHub](https://img.shields.io/github/license/siesgstarena/labs)
-![Release](https://img.shields.io/github/v/release/siesgstarena/labs)
+![Issues](https://img.shields.io/github/issues/siesgstarena/labs)
+![Pull Requests](https://img.shields.io/github/issues-pr-closed/siesgstarena/labs)
+![Stars](https://img.shields.io/github/stars/siesgstarena/labs)
+![EDA](https://img.shields.io/badge/exploratory--data--analysis-0%20experiments-blueviolet)
+![ML](https://img.shields.io/badge/machine--learning-0%20models-important)
 
 - [About](#about)
 - [Set of Experiments](#set-of-experiemnts)
