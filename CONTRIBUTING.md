@@ -4,6 +4,15 @@
 
 ## Before you start
 
+* `bug`:- Issues related to bugs in code which is creating some error or decreasing accuracy.
+* `experiment`:- Issues related to creation/improvement of new/existing experiments. 
+* `question`:- Any doubt you come across in the repository or while submitting PRs. 
+
+## How to start
+
+* Create issue using the issue templates provided by selecting from option after clicking new issue. This will allow us to know on what experiment you want to work and we can provide guidence/suggestion about it.
+* After selecting issue template you will se some pre-written info in the description of issue fill that info. For every template the info needed may variey. If you have something more to add feel free to add in the issue.
+* You can start working on the issue after you are done creating one. Please follow the contribution guidelines while writing the code.
 * Comment on the issue that you plan to work on so we can assign it to you and there isn't unnecessary duplication of work.
 * If you're fixing some smaller issue - please check the list of pending Pull Requests to avoid unnecessary duplication.
 
@@ -26,7 +35,6 @@ Please follow the guidelines below:-
 ## Linting
 
 We use [nblint](https://pypi.org/project/nblint/) for ensuring Labs is nice and easy to use and work on long-term.
-
 
 ## Coding Style Changes
 
