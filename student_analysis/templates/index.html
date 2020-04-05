@@ -3,7 +3,8 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-    <title>LCP 6</title>
+    <title>User Profile | {{user_info[1]}}</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='./bootstrap/css/bootstrap.min.css')}}">
     <!-- <link rel="icon" href="{{url_for('static',filename='./deep.png')}}" type="image/png" sizes="16x16"> -->
     <script src="{{url_for('static',filename='./bootstrap/js/bootstrap.min.js')}}"></script>
@@ -13,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"
         integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='./css/styles.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/styles.css')}}">
 </head>
 <body>
     <div id="fullpage">
@@ -131,8 +132,6 @@
 
 
 </div>
-
-    <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
     <script>
         new fullpage('#fullpage', {

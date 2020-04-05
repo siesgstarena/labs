@@ -4,7 +4,7 @@ import pandas as pd
 from math import ceil
 from sklearn.preprocessing import MultiLabelBinarizer
 from nltk.stem import WordNetLemmatizer 
-from plotly.offline import init_notebook_mode, iplot
+from plotly.offline import plot
 import plotly.offline as py
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
@@ -12,7 +12,7 @@ import plotly.express as px
 from plotly.graph_objs import *
 import plotly
 from heapq import nlargest 
-init_notebook_mode(connected=True) 
+# init_notebook_mode(connected=True) 
 
 lemmatizer = WordNetLemmatizer() 
 mlb = MultiLabelBinarizer()
