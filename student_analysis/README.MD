@@ -2,6 +2,8 @@
 
 This Flask website is a dashboard for keeping track of personal progress on http://arena.siesgst.ac.in/  
 
+#### This project has been deployed on https://arena-siesgst-dashboard.herokuapp.com/
+
 ![](demo.gif)
 
 To execute application on Local Machine 
@@ -17,3 +19,5 @@ To execute application on Local Machine
 
 ### To view Dashboard (in Browser) goto following link once server starts
 >http://localhost:5000/
+
+#### Layouts are visible properly at 67% zoom in browser
