@@ -93,16 +93,16 @@ def get_topic_ratings(personal,users,problems,submissions):
     personal_topics = personal_merged.drop(['_id_x', 'userId', 'problemId', 'contestId', 'language', 'time',
             'memory', 'status', 'points_x', '_id_y', 'code', 'points_y', 'name'],axis=1)
     l = dict()
-    unexp=list()
+    unexplored=list()
     for x in personal_topics.columns:
         count = personal_topics[x].loc[personal_topics[x]==1].count()
         if count!=0:
             l[x]= count
         else:
-            unexp.append(x)
+            unexplored.append(x)
     srt = sorted(l, key=l.get)
     b=np.array_split(np.asarray(srt) , 2)
-    return unexp,list(b[0]),list(b[1])
+    return unexplored,list(b[0]),list(b[1])
 
 def n_high_submission(personal,problems,users,submissions):
     personal_submissions = pd.merge(personal,preprocess_problem(problems),
@@ -143,19 +143,19 @@ def get_user_details(users,email,problems,submissions):
     except:
         return 0
 
-def get_recommendation(problems,unexp,good,personal_merged,best):
+def get_recommendation(problems,unexplored,good,personal_merged,best):
     p = preprocess_problem(problems)
-    unexp_d=dict()
-    if len(unexp) > 0:
-        for tops in unexp:
+    unexplored_d=dict()
+    if len(unexplored) > 0:
+        for tops in unexplored:
             sums =  list(p.loc[p[tops]==1]['code'].to_dict().values())
             l=dict()
 
             for su in sums:
                 l[su] = list(p.loc[p['code']==su]['points'].to_dict().values())[0]
             srt = sorted(l, key=l.get)
-            unexp_d[tops]=srt[0:5]
-    prac_d=dict()
+            unexplored_d[tops]=srt[0:5]
+    practice_d=dict()
     if len(good)>0:
         for tops in good:
             # print(tops)
@@ -168,7 +168,7 @@ def get_recommendation(problems,unexp,good,personal_merged,best):
             srt = set(srt) - set(personal_merged['code'])
             srt = list(srt)
             if len(srt)>0:
-                prac_d[tops]=srt[0:5]
+                practice_d[tops]=srt[0:5]
 
 
     best_d=dict()
@@ -186,5 +186,5 @@ def get_recommendation(problems,unexp,good,personal_merged,best):
             if len(srt)>0:
                 best_d[tops]=srt[0:5]
 
-    return unexp_d,prac_d,best_d
+    return unexplored_d,practice_d,best_d
         

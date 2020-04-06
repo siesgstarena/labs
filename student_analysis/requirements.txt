@@ -7,10 +7,10 @@ Jinja2==2.11.1
 joblib==0.14.1
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
-matplotlib==3.2.1
+matplotlib
 nltk==3.4.5
-numpy==1.18.2
-pandas==1.0.3
+numpy
+pandas
 plot==0.6.5
 plotly==4.6.0
 pyparsing==2.4.6

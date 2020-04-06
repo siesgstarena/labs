@@ -6,14 +6,14 @@ import numpy as np
 import json
 import functions
 
-with open('users.json', 'r', errors='ignore') as f:
+with open('data/users.json', 'r', errors='ignore') as f:
         data = json.load(f)
 users = pd.DataFrame(data)
-with open('problems.json', 'r', errors='ignore') as f:
+with open('data/problems.json', 'r', errors='ignore') as f:
         data = json.load(f)
 problems = pd.DataFrame(data)
 
-with open('submissions.json', 'r', errors='ignore') as f:
+with open('data/submissions.json', 'r', errors='ignore') as f:
         data = json.load(f)
 submissions = pd.DataFrame(data)
 
@@ -36,7 +36,7 @@ def email():
     bad,good,best = functions.get_topic_ratings(personal,users,problems,submissions)
     nHighest,json_n_highest_submissions = functions.n_high_submission(personal,problems,users,submissions)
 
-    unexp_d,prac_d ,best_d= functions.get_recommendation(problems,bad,good,personal_merged,best) 
+    unexplored_d,practice_d ,best_d= functions.get_recommendation(problems,bad,good,personal_merged,best) 
 
     return render_template("index.html",
         json_verdict=json_verdict,
@@ -46,8 +46,8 @@ def email():
         json_n_highest_submissions=json_n_highest_submissions,
         num_sub=num_sub,
         nHighest=nHighest,
-        unexp_d=unexp_d,
-        prac_d=prac_d,
+        unexplored_d=unexplored_d,
+        practice_d=practice_d,
         best_d=best_d
         )
 
