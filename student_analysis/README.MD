@@ -40,3 +40,17 @@ The Data collected from Databases are stored inside Data folder in the following
 
 ## Results
 ![](images/demo.gif)
+
+## Meta
+
+V.Karthikraj 
+- karthikraj.v17@siesgst.ac.in
+- [@LinkedIn](https://www.linkedin.com/in/naidukarthi2193/) 
+
+## Contributing
+
+1. Fork it (<https://github.com/naidukarthi2193/labs/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
