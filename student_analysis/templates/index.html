@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>User Profile | {{user_info[1]}}</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='./bootstrap/css/bootstrap.min.css')}}">
+    <script src="{{url_for('static',filename='./bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='./js/plotly.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"
+        integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="fullpage">
+
+        <!-- PROFILE -->
+        <div class="section clearfix">
+            <span class="display-4 text-center w-100 d-block font-weight-bold">Profile</span>
+
+            <div class="jumbotron jumbotron-fluid clearfix h-0 p-2 mt-3">
+                <div class="container">
+                    <h1 class="display-4">{{user_info[1]}}</h1>
+                    <p class="lead w-100 d-block">@ {{user_info[2]}}</p>
+                    <p class="lead w-100 d-block">{{user_info[3]}} </p>
+                    <p class="lead w-100 d-block"><b>Current Ratings</b> {{user_info[6]}} </p>
+                    <p class="lead w-100 d-block"><b>Intrests</b> {{user_info[4]|join(', ')}} </p>
+                    <p class="lead w-100 d-block"><b>Prefered Languages</b> {{user_info[5]|join(', ')}} </p>
+                </div>
+            </div>
+            <div class="my-auto clearfix">
+                <div class="container shadow-lg chart  float-left my-5 mx-4 " style="width:45%" id="verdict_graph">
+                    <script>
+                        var verdict_graph = {{ json_verdict | safe}};
+                        var layout = { title: 'Performance Verdict' };
+                        Plotly.newPlot('verdict_graph', verdict_graph, layout);
+                    </script>
+                </div>
+                <div class="container shadow-lg chart  float-left my-5 mx-4 " style="width:45%" id="topic_graph">
+
+                    <script>
+                        var topic_graph = {{ json_topics | safe}};
+                        var layout = { title: 'ADDDDD RATINGS GRAPH HEREE', barmode:'stack' };
+                        Plotly.newPlot('topic_graph', topic_graph, layout);
+                    </script>
+                </div>
+            </div>
+            
+            <!-- </div> -->
+        </div>
+        <!-- HISTORY -->
+        <div class="section clearfix">
+            <span class="display-4 text-center w-100 d-block font-weight-bold">History</span>
+            <div class="my-auto clearfix">
+                <div class="container shadow-lg chart  float-left my-5 mx-4 " style="width:45%" id="topics">
+
+                    <script>
+                        var topic_graph = {{ json_topics | safe}};
+                        var layout = { title: 'Topics Attempted', barmode:'stack' };
+                        Plotly.newPlot('topics', topic_graph, layout);
+                    </script>
+                </div>
+                <div class="container shadow-lg chart  float-left my-5 mx-4 " style="width:45%" id="ver">
+                    <script>
+                        var verdict_graph = {{ json_n_highest_submissions | safe}};
+                        var layout = { title: 'Top 10 Attempted Sums',barmode:'stack' };
+                        Plotly.newPlot('ver', verdict_graph, layout);
+                    </script>
+                </div>
+            </div>
+            <div class="jumbotron jumbotron-fluid clearfix">
+                <div class="container">
+                    <h1 class="display-4">Submissions {{num_sub}}</h1>
+                    <p class="lead w-100 d-block"><b>Topics with Experience</b>  :  {{best|join(', ')}}</p>
+                    <p class="lead w-100 d-block"><b>Topics needing practice</b>  :   {{good|join(', ')}}</p>
+                    <p class="lead w-100 d-block"><b>Topics left to explore</b>  :   {{bad|join(', ')}} </p>
+                    <p class="lead w-100 d-block"><b>Top Sums Attempted</b>  :   {{nHighest|join(', ')}} </p>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+        <!-- RECOMMEND -->
+        <div class="section clearfix">
+            <span class="display-4 text-center w-100 d-block font-weight-bold">Recommendations</span>
+            <br>
+            <br>
+            <br>
+            <div class="jumbotron jumbotron-fluid clearfix">
+                <div class="container">
+                        <br><br>
+                        {% if unexplored_d|length %}
+                            <h1 class="display-4">Topics left to explore </h1>
+                    <table>
+                        {% for key, value in unexplored_d.items() %}
+                           <tr>
+                                <th> {{ key }} </th>
+                                <td> {{ value|join(', ') }} </td>
+                           </tr>
+                        {% endfor %}
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        {% endif %}
+                        {% if practice_d | length %}
+                        <h1 class="display-4">Topics needing practice </h1>
+                    <table>
+                        {% for key, value in practice_d.items() %}
+                           <tr>
+                                <th> {{ key }} </th>
+                                <td> {{ value|join(', ') }} </td>
+                           </tr>
+                        {% endfor %}
+                        </table>
+                        <br>
+                        {% endif %}
+                        
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+</div>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+    <script>
+        new fullpage('#fullpage', {
+            anchors: ['Profile','Predictions','RECOMMEND'],
+            sectionsColor: ['rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)', 'rgba(250,250,250,0.9)'],
+            sectionSelector: '.section',
+        });
+    </script>
+</body>
+</html>
