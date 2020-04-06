@@ -32,12 +32,10 @@ System provides top 5 problems of Higher  difficulty which has not been solved y
 #### Layouts are visible properly at 67% zoom in browser
 
 ## Dataset
-The Data collected from Databases are stored inside Data folder in the following files <br>
->users.json
-<br>
->submissions.json
-<br>
->problems.json
+The Data collected from Databases are stored inside Data folder in the following files
+- users.json
+- submissions.json
+- problems.json
 
 
 ## Results
