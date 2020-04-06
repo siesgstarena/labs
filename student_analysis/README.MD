@@ -55,3 +55,10 @@ V.Karthikraj
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+
+## TODOs
+- Add Ratings Data and Graphs
+- UI Improvements
+- Responsive design
+- Recommed Blogs according to submissions
+- Add URLs for Recommended Problems
