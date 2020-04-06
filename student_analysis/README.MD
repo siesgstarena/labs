@@ -37,6 +37,7 @@ The Data collected from Databases are stored inside Data folder in the following
 - submissions.json
 - problems.json
 
+#### Get the Updated Dataset from <http://arena.siesgst.ac.in/labs> and place it 'data' folder
 
 ## Results
 ![](images/demo.gif)
