@@ -1,0 +1,13 @@
+<html>
+  <head></head>
+  <body>
+    <h3>Home page</h3>
+    <form action="/email" method="post">
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email">
+      <input type="submit" value="Submit">
+    </form>
+
+    <p>{{status | safe}}</p>
+  </body>
+</html>
