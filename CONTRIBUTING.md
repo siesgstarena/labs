@@ -29,8 +29,13 @@ All contributions are done through Pull Requests here on GitHub.
 
 ### Guidelines for PRs
 
-* Submit all code changes via pull requests (PRs) to master branch. PRs will be reviewed and potentially merged by the repo maintainers after a peer review that includes at least two maintainers.
-* **DO NOT** submit "work in progress" PRs. PR should only be submitted when it is considered ready for review and subsequent merging by the contributor.
+* Submit all code changes via pull requests (PRs) rather than through a direct commit. PRs will be reviewed and potentially merged by the repo maintainers after a peer review that includes at least one maintainer.
+* Make sure to add README for your code. A <a href="https://github.com/siesgstarena/labs/blob/master/README-template.md">README-template</a> has been provided for that purpose.
+* **DO NOT** submit "work in progress" PRs.  A PR should only be submitted when it is considered ready for review and subsequent merging by the contributor.
+
+## Linting
+
+We use [nblint](https://pypi.org/project/nblint/) for ensuring Labs is nice and easy to use and work on long-term.
 
 ## Linting
 
@@ -38,11 +43,11 @@ We use [nblint](https://pypi.org/project/nblint/) for Notebooks and [pylint](htt
 
 ## Coding Style Changes
 
-#### DON'T
+### DON'T
 
 * Send PRs for style changes. For example, do not send PRs that are focused on changing usage of ```Int32``` to ```int```.
 
-#### DO
+### DO
 
 * Send PRs for upgrading code to use newer language features as it's ok to use newer language features as part of new code that's written.
 
